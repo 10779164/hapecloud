@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon">
+        <title>云盘</title>
+        <style>
+                h3{
+                        color: red;
+                        margin: 8px auto;
+                }
+        </style>
+<body>
+    <div style="text-align: center;width: 100%;height: auto;">
+    <h1>假装能测试文件上传速度</h1>
+    <div class="input-group" style="margin: 0 auto;">
+    <form action="/upload" method='POST' enctype='multipart/form-data'>
+      <input type='file' name="filename" class="input-large" style="border:2px solid #7BA7AB;border-radius: 5px;margin: 20px auto;">
+      <input type='submit' value='Upload' class="form-control btn-danger">
+    </form>
+    </div>
+    <h3>{{ result }}</h3>
+    <h3>{{ file_size }}</h3>
+    <h3>{{ time }}</h3>
+    </div>
+
+    <div style="width: 30%;height: 150px;border: 1px solid #555555;margin: 10px 10px;padding: 10px;">
+	<div class="form-group">
+	<form action="/download" >
+		<button type="submit" class="btn btn-default a" style="float: right;margin:30px 0px;">OK</button>
+	</form>
+	</div>
+    </div>
+</body>
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
+
