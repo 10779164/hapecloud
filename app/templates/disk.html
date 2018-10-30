@@ -144,7 +144,7 @@
 									<td>{{ file['file_size'] }}</td>
 									<td>
 										<!-- <i class="btn btn-default download" id={{ file['file_name'] }} onclick="file_download(this)"><span class="glyphicon glyphicon-download-alt">下载</span></i> -->
-										<i class="btn btn-default download" id={{ file['file_name'] }} onclick="location.href='http://192.168.80.128/download/{{ file['file_name'] }}'"><span class="glyphicon glyphicon-download-alt">下载</span></i>
+										<i class="btn btn-default download" id={{ file['file_name'] }} onclick="location.href='/download/{{ file['file_name'] }}'"><span class="glyphicon glyphicon-download-alt">下载</span></i>
 										<i class="btn btn-default remove" id={{ file['file_name'] }} onclick="file_delete(this)"><span class="glyphicon glyphicon-remove">删除</span></i>
 									</td>
 								</tr>
