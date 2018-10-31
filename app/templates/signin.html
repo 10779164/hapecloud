@@ -34,10 +34,12 @@
 				<input type="password" placeholder="密码" required="" id="password" name="password" />
 			</div>
 			<div>
-				<input type="password" placeholder="确认密码" required="" id="password" name="password" />
+				<input type="password" placeholder="确认密码" required="" id="confirm_password" name="password" onkeyup="test()"  />
+			<br >
+			<span id="comment"></span>
 			</div>
 			<div>
-				<input type="submit" value="注册" style="top: 0px;right: 0;margin:20px 20px ;width: 320px;"/>
+				<input type="submit" value="注册" style="top: 0px;right: 0;margin:20px 20px ;width: 320px;" id="dosubmit" onclick="validate()" />
 			</div>
 		</form><!-- form -->
 		<div class="button">
@@ -45,6 +47,26 @@
 		</div><!-- button -->
 	</section><!-- content -->
 </div><!-- container -->
+<script type="text/javascript">
+	function validate() {
+    	var pwd1 = document.getElementById("password").value;
+    	var pwd2 = document.getElementById("confirm_password").value;
+    	if(pwd1 != pwd2) {
+   		confirm_password.focus();
+      		document.getElementById("comment").innerHTML="<font color='red'>密码不一致</font>";
+      		document.getElementById("dosubmit").disabled = true;
+      		return false;
+    	}
+   		 else {
+			document.getElementById("dosubmit").disabled = false;
+   		 	return true;
+   		 }
+	}
+
+	function test(){
+		document.getElementById("dosubmit").removeAttribute('disabled');
+	}
+</script>
 <script type="text/javascript" src="static/js/input.js"></script>
 </body>
 </html>
