@@ -87,8 +87,9 @@ def upload():
         try:
             #starttime=time.time()
             f = request.files['filename']
+	    #print f.filename.replace(' ','')
 	    dir='/data/flask_data/'+session.get('username')
-            upload_path=os.path.join(dir,f.filename)
+            upload_path=os.path.join(dir,f.filename.replace(' ',''))
             f.save(upload_path)
             #endtime=time.time()
             #real_time=float('%0.2f' % (endtime-starttime))
