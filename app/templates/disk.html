@@ -59,6 +59,11 @@
 		 .table>tbody>tr>td{
 		   	line-height: 2.428571;
 		   }
+		  td{
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+			}
 		</style>
 		<title>Hape微云~~ 分享生活，感动你妈</title>
 	</head>
@@ -143,7 +148,6 @@
 									<td>{{ file['file_createtime'] }}</td>
 									<td>{{ file['file_size'] }}</td>
 									<td>
-										<!-- <i class="btn btn-default download" id={{ file['file_name'] }} onclick="file_download(this)"><span class="glyphicon glyphicon-download-alt">下载</span></i> -->
 										<i class="btn btn-default download" id={{ file['file_name'] }} onclick="location.href='/download/{{ file['file_name'] }}'"><span class="glyphicon glyphicon-download-alt">下载</span></i>
 										<i class="btn btn-default remove" id={{ file['file_name'] }} onclick="file_delete(this)"><span class="glyphicon glyphicon-remove">删除</span></i>
 									</td>
