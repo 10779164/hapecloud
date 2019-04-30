@@ -3,7 +3,7 @@
 create database Hapecloud charset utf8;
 
 ###create database user
-grant all privileges on Hapecloud.* to hapecloud@'%' identified by 'hapecloudadmin';
+grant all privileges on Hapecloud.* to hapecloud@'localhost' identified by 'hapecloudadmin';
 
 ###create user table
 use Hapecloud;

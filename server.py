@@ -9,4 +9,4 @@ from app import app
 app.debug = True
 #app.config.from_object(config)
 
-app.run(host='0.0.0.0',port=80,threaded='True')
+#app.run(host='0.0.0.0',port=80,threaded='True')
