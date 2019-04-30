@@ -9,18 +9,19 @@ NC='\033[0m'
 
 if echo $ID | grep -iq "centos"; then
         yum install epel-release python-pip MySQL-python mariadb-server -y
+	pip install uwsgi 
         mkdir -p /data/flask_data
         echo -e "${green}done${NC}"
 
 elif echo $ID | grep -iq "debian"; then
         apt-get install libmysqlclient-dev python-dev python-pip mysql-server -y
-        pip install MySQL-python
+        pip install MySQL-python uwsgi
         mkdir -p /data/flask_data
         echo -e "${green}done${NC}"
 
 elif echo $ID | grep -iq "ubuntu"; then
         apt-get install libmysqlclient-dev python-dev python-pip mysql-server -y
-        pip install MySQL-python
+        pip install MySQL-python uwsgi
         mkdir -p /data/flask_data
         echo -e "${green}done${NC}"
 
